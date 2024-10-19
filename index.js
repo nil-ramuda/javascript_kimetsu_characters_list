@@ -12,14 +12,8 @@ const APIs = [
     category: "kisatsutai", url: "https://ihatov08.github.io/kimetsu_api/api/kisatsutai.json"
   }
 ]
-const $UL_ALL = document.getElementById("all");
-const $UL_HASHIRA = document.getElementById("hashira");
-const $UL_ONI = document.getElementById("oni");
-const $UL_KISATSUTAI = document.getElementById("kisatsutai");
+
 const $P = document.getElementById("loading");
-const $LI_HASHIRA = document.createElement("li");
-const $LI_ONI = document.createElement("li");
-const $LI_KISATSUTAI = document.createElement("li");
 const $DIV_CHARACTERS_CONTAINER = document.getElementById("character-container");
 const $INPUTS = document.getElementsByName("character");
 
@@ -30,7 +24,7 @@ const loading = () => {
     $P.innerText = "Loading...";
     setTimeout(() => {
       resolve();
-    }, 3000)
+    }, 100)
   })
 }
 
@@ -79,22 +73,23 @@ const createElements = async (characters) => {
   $DIV_CHARACTERS_CONTAINER.style.alignItems = 'flex-start';
 }
 
-
 const putCharacters = async (api) => {
   await removeCurrentElements();
   await loading();
   const targetAPI = APIs.find((API) => API.category == api)
-  let characters = await fetchCharacters(targetAPI.url);
+  const characters = await fetchCharacters(targetAPI.url);
   await createElements(characters);
 }
 
 const putCharacterList = () => {
   $INPUTS.forEach($input => {
     $input.addEventListener("click", () => {
-      if (!$input.checked) return;
+      if ($P.innerText == "Loading...") return;
+      $input.checked = true;
       putCharacters($input.id);
     })
   })
 }
 
+putCharacters("all");
 putCharacterList();
