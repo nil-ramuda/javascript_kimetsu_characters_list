@@ -1,0 +1,35 @@
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.character-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.character-column {
+  width: 30%;
+}
+
+.character-column h2 {
+  text-align: center;
+}
+
+.single-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.multi-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.multi-image img:last-child {
+  margin-bottom: 0;
+}

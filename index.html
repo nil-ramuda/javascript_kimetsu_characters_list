@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p>これはHappinessChainのJavaScript課題「Vanilla JSで鬼滅の刃のキャラクター一覧を表示するAPIを叩く」です</p>
+  <div>
+    <!-- <input type="radio" id="all-characters-api" name="characters" value="all" checked /> -->
+    <!-- <label for="all-characters-api">全キャラクター</label> -->
+    <input type="radio" id="all-characters" name="characters" value="all" checked />
+    <label for="all-characters">全キャラクター</label>
+  </div>
+  <div>
+    <!-- <input type="radio" id="hashira-api" name="characters" value="hashira" /> -->
+    <!-- <label for="hashira-api">柱</label> -->
+    <input type="radio" id="hashira" name="characters" value="hashira" />
+    <label for="hashira">柱</label>
+  </div>
+  <div>
+    <!-- <input type="radio" id="oni-api" name="characters" value="oni" /> -->
+    <!-- <label for="oni-api">鬼</label> -->
+    <input type="radio" id="oni" name="characters" value="oni" />
+    <label for="oni">鬼</label>
+  </div>
+  <div>
+    <!-- <input type="radio" id="kisatsutai-api" name="characters" value="kisatsutai" /> -->
+    <!-- <label for="kisatsutai-api">鬼殺隊</label> -->
+    <input type="radio" id="kisatsutai" name="characters" value="kisatsutai" />
+    <label for="kisatsutai">鬼殺隊</label>
+  </div>
+  <p id="loading"></p>
+  <div id="character-container"></div>
+  <script src="index.js"></script>
+</body>
+</html>
